@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.json());
-// add your code here
+
 var array = [
     {
         todoItemId: 0,
@@ -44,8 +44,7 @@ app.get('/api/TodoItems/:number', (req, res) => {
 });
 
 app.post('/api/TodoItems/', (req, res) => {
-
-    for (var i = 0; i < array.lenght; i++) {
+    for (var i = 0; i < array.length; i++) {
         if (req.body.todoItemId == array[i].todoItemId) {
             array.splice(array[i], 1, req.body);
         } else {
